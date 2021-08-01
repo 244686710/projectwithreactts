@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react'
 import { List } from './list'
 import { SearchPanel } from './search-panel'
 import qs from 'qs'
-import {clearnObject, useMount, useDebounce} from 'utils'
+import {clearnObject, useMount, useDebounce} from 'utils/index'
 
 const apiUrl = process.env.REACT_APP_API_URL
 export const ProjectListScreen = () => {
@@ -11,7 +11,7 @@ export const ProjectListScreen = () => {
     name: '',
     personId: ''
   })
-  const debounceParam = useDebounce(param, 2000)
+  const debounceParam = useDebounce(param, 200)
   const [list, setList] = useState([])
   const [users, setUsers] = useState([])
   useEffect(() => {
